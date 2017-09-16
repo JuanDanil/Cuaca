@@ -1,0 +1,80 @@
+<!-- Created by Juan Danil--> 
+ 
+<!--
+    Get weather information at your place or any other place! :D 
+    Leave it empty and you'll get the weather in my city.
+
+    Changable background(day/night) and weather icons based on weather conditions and time of the day!
+    
+    Responsive layout
+    
+    * API's used:
+        -for weather data - https://openweathermap.org/api
+        -for current location (of IP address) - https://ipinfo.io/developers
+        
+    Version 1.1.0: Added imperial units(°F, mph)
+    Version 1.1.1: Handling 404 error(city not found), and any other error
+    
+    Recommended update by @stefan hall:
+        Version 1.2.1: Added search by ZIP code, you have to enter it in a format {ZIP_Code},{Country_Code}
+        For example for New York, you would enter 10001,us
+        
+    Major update:
+        Version 2.2.1: Added Google Maps API, search map and drag marker to a new place to get weather at that place!! :D (might take a few seconds on first opening of a map, depends on your network)
+        
+    Version 2.2.2: When you drag a marker to a new place, weather is updated only when you leave a map, and not on every drag (less unnecessary API calls)
+    
+    Version 2.2.3: Fixed mixed content warnings
+    
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Weather Info</title>
+        <meta name="author" content="Domagoj Puljic" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" href="new.css" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="n=new 1.js" type="text/javascript"></script>
+    </head>
+    <body>
+        <span class="col-xs-12 spinner"><img src="https://s21.postimg.org/64nu2yixz/loader.png" width="50" height="50"></span>
+        <div class="container-fluid text-center">
+            <input type="button" class="btn btn-info" id="showMap" value="⦿"> 
+            <span class="city text-center"></span>
+            <div class="col-xs-12">
+                <input type="submit" id="change" class="btn btn-primary" value="°F">
+                <input type="text" id="input-city" placeholder="..enter city">
+                <input type="submit" id="submit" class="btn btn-primary" value="Go">
+            </div>
+            <div class="row text-center">
+                <div class="col-xs-6">
+                  <img class="condition-icon img-responsive center-block" src="">
+                  <span class="weather-descr"></span>
+                </div>
+                <div class="col-xs-6 tdiv">
+                    <span class="temp"></span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <img src="https://dprogramming.000webhostapp.com/weather_photos/humidity.PNG" class="img-responsive center-block img-rad" style="max-width:27%;min-width:50px;">
+                    <span class="humid"></span>
+                </div>
+                <div class="col-xs-4">
+                    <img class="compass img-responsive center-block img-rad" src="http://image.flaticon.com/icons/png/512/10/10442.png" style="max-width:25%;min-width:50px;">
+                    <span class="wind center-block"></span>
+                </div>
+                <div class="col-xs-4">
+                    <img src="https://dprogramming.000webhostapp.com/weather_photos/pres.PNG" class="img-responsive center-block img-rad" style="max-width:25%;min-width:50px;">
+                    <span class="pressure"></span>
+                </div>
+            </div>
+            <footer class="foot text-center">Created by <span style="color:#f83;">Juan Danil</span></footer>
+        </div>
+        
+        <div id="map"></div>
+        
+    </body>
+</html>

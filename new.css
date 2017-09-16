@@ -1,0 +1,126 @@
+/* Created by Juan Danil */ 
+ 
+html, body { 
+    height: 100%; 
+} 
+body { 
+    color: #fff; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-attachment: fixed; 
+    background-position: center; 
+    min-height: 100%; 
+    font-family: Verdana, sans-serif; 
+} 
+.container-fluid { 
+    display: none; 
+    font-size: 1.2em; 
+    height: 100%; 
+    padding-top:10px; 
+} 
+.row { 
+    text-shadow: 0 0 4px #000; 
+    padding-top: 70px; 
+} 
+.img-rad { 
+    border-radius: 50%; 
+    background: #aaa; 
+    background: rgba(255, 255, 255, 0.5); 
+    padding: 10px; 
+} 
+.compass { 
+    -ms-transform: rotate(0deg); 
+    -webkit-transform: rotate(0deg); 
+    transform: rotate(0deg); 
+     
+    -webkit-transition: transform 3s linear; 
+    transition: transform 3s linear; 
+    max-width: 30%; 
+    min-width: 50px; 
+} 
+ 
+.city { 
+    width: 100%; 
+    font-size: 1.5em; 
+    text-shadow: 0 0 2px #999; 
+} 
+.foot { 
+    position: fixed; 
+    bottom: 0; 
+    width: 100%; 
+} 
+.temp { 
+    font-size: 2em; 
+} 
+.tdiv{ 
+    padding-top:30px;  
+} 
+ 
+#change { 
+    width: 40px; 
+} 
+#input-city { 
+    width: 30%; 
+    min-width: 140px; 
+    height: 30px; 
+    padding-left: 10px; 
+    border: none; 
+    border-radius: 25px; 
+    box-shadow: 0 0 2px #000; 
+    font-size:16px; 
+    color:#000; 
+} 
+#input-city:focus { 
+    box-shadow: 0 0 6px #f00; 
+} 
+#input-city:focus, input[type="submit"], input[type="submit"]:focus, #showMap:focus { 
+    outline: none; 
+} 
+.btn { 
+    border-radius: 25px; 
+} 
+ 
+.spinner { 
+    position: absolute; 
+    text-align: center; 
+    top:40%; 
+    z-index:110; 
+     
+    -webkit-animation: spin 1s linear infinite; 
+    animation: spin 1s linear infinite; 
+} 
+#showMap { 
+    position: absolute; 
+    color: #000; 
+    z-index:100; 
+    left:0; 
+    width: 25px; 
+    padding:2px 5px; 
+    border-radius: 0 10px 10px 0 
+} 
+#map { 
+    position:absolute; 
+    top:0; 
+    left:0; 
+    width:90%; 
+    height:85%; 
+    display: none; 
+    margin: 5%; 
+} 
+ 
+ 
+@-webkit-keyframes spin {  
+    100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); }  
+} 
+@keyframes spin {  
+    100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); }  
+} 
+ 
+@media screen and (min-width:1200px) { 
+    .container-fluid { 
+        font-size: 1.6em; 
+    } 
+    #map { 
+        width:60%; 
+    } 
+} 
